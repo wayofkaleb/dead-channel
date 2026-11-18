@@ -1,0 +1,151 @@
+{
+  "as_of": "2026-01-18T00:00:00Z",
+  "stale_after_seconds": 120,
+  "late_after_seconds": 60,
+  "sources": [
+    {
+      "source": "auth-service",
+      "status": "fresh",
+      "latest_event_at": "2026-01-17T23:59:52Z",
+      "latest_heartbeat_at": "2026-01-17T23:59:48Z",
+      "event_age_seconds": 8.0,
+      "heartbeat_age_seconds": 12.0,
+      "events": 2,
+      "heartbeats": 1,
+      "late_events": 0
+    },
+    {
+      "source": "game-gateway",
+      "status": "stale",
+      "latest_event_at": "2026-01-17T23:57:38Z",
+      "latest_heartbeat_at": "2026-01-17T23:59:52Z",
+      "event_age_seconds": 142.0,
+      "heartbeat_age_seconds": 8.0,
+      "events": 2,
+      "heartbeats": 1,
+      "late_events": 1
+    },
+    {
+      "source": "match-service",
+      "status": "fresh",
+      "latest_event_at": "2026-01-17T23:59:51Z",
+      "latest_heartbeat_at": "2026-01-17T23:59:42Z",
+      "event_age_seconds": 9.0,
+      "heartbeat_age_seconds": 18.0,
+      "events": 2,
+      "heartbeats": 1,
+      "late_events": 0
+    }
+  ],
+  "records": [
+    {
+      "id": "gateway-health-66",
+      "source": "game-gateway",
+      "kind": "event",
+      "timestamp": "2026-01-17T23:57:14Z",
+      "received_at": "2026-01-17T23:57:16Z",
+      "message": "The practice lobby passed its connection check.",
+      "lag_seconds": 2.0,
+      "late": false
+    },
+    {
+      "id": "gateway-conn-69",
+      "source": "game-gateway",
+      "kind": "event",
+      "timestamp": "2026-01-17T23:57:38Z",
+      "received_at": "2026-01-17T23:59:50Z",
+      "message": "A test client connected to the practice lobby.",
+      "lag_seconds": 132.0,
+      "late": true
+    },
+    {
+      "id": "auth-session-61",
+      "source": "auth-service",
+      "kind": "event",
+      "timestamp": "2026-01-17T23:59:35Z",
+      "received_at": "2026-01-17T23:59:37Z",
+      "message": "A test account opened a session.",
+      "lag_seconds": 2.0,
+      "late": false
+    },
+    {
+      "id": "match-heartbeat-42",
+      "source": "match-service",
+      "kind": "heartbeat",
+      "timestamp": "2026-01-17T23:59:42Z",
+      "received_at": "2026-01-17T23:59:43Z",
+      "message": "The match collector checked in.",
+      "lag_seconds": 1.0,
+      "late": false
+    },
+    {
+      "id": "match-queue-18",
+      "source": "match-service",
+      "kind": "event",
+      "timestamp": "2026-01-17T23:59:44Z",
+      "received_at": "2026-01-17T23:59:45Z",
+      "message": "Two players joined the practice queue.",
+      "lag_seconds": 1.0,
+      "late": false
+    },
+    {
+      "id": "auth-heartbeat-48",
+      "source": "auth-service",
+      "kind": "heartbeat",
+      "timestamp": "2026-01-17T23:59:48Z",
+      "received_at": "2026-01-17T23:59:49Z",
+      "message": "The auth collector checked in.",
+      "lag_seconds": 1.0,
+      "late": false
+    },
+    {
+      "id": "match-ready-19",
+      "source": "match-service",
+      "kind": "event",
+      "timestamp": "2026-01-17T23:59:51Z",
+      "received_at": "2026-01-17T23:59:52Z",
+      "message": "A practice match started.",
+      "lag_seconds": 1.0,
+      "late": false
+    },
+    {
+      "id": "gateway-heartbeat-52",
+      "source": "game-gateway",
+      "kind": "heartbeat",
+      "timestamp": "2026-01-17T23:59:52Z",
+      "received_at": "2026-01-17T23:59:53Z",
+      "message": "The gateway collector checked in.",
+      "lag_seconds": 1.0,
+      "late": false
+    },
+    {
+      "id": "auth-refresh-62",
+      "source": "auth-service",
+      "kind": "event",
+      "timestamp": "2026-01-17T23:59:52Z",
+      "received_at": "2026-01-17T23:59:54Z",
+      "message": "A test account refreshed its session.",
+      "lag_seconds": 2.0,
+      "late": false
+    }
+  ],
+  "rejected": [
+    {
+      "line": 3,
+      "source": "game-gateway",
+      "reason": "Timestamp is not a valid ISO timestamp."
+    },
+    {
+      "line": 10,
+      "source": "game-gateway",
+      "reason": "Timestamp needs a time zone."
+    }
+  ],
+  "duplicates": [
+    {
+      "line": 9,
+      "source": "match-service",
+      "id": "match-queue-18"
+    }
+  ]
+}

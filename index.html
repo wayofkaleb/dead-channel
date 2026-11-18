@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#09090b">
+  <meta name="description" content="Find the quiet feed in a fictional monitoring desk. Follow the evidence from a Python log replay.">
+  <title>Dead Channel | Midnight Packet</title>
+  <link rel="icon" href="assets/midnight-envelope.png" type="image/png">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="lab.css">
+  <link rel="stylesheet" href="page.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="wordmark" href="https://midnightpacket.dev/">
+        <img class="wordmark-icon" src="assets/midnight-envelope.png" width="36" height="36" alt="">
+        <span>midnight.packet</span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="https://midnightpacket.dev/#directory">All labs</a>
+        <a href="https://github.com/wayofkaleb/dead-channel">Python source</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap lab-main dead-channel" id="main" tabindex="-1">
+    <div class="desk-header">
+      <div class="lab-intro">
+        <h1>Dead <span>Channel</span></h1>
+        <p>The Emberlane monitoring desk has gone quiet. Check the last events, the heartbeats, and the lines the collector threw out. See where the signal went.</p>
+      </div>
+      <aside class="desk-clock" aria-label="Replay clock">
+        <p>Emberlane / fictional replay</p>
+        <p id="replay-clock">Loading replay clock</p>
+      </aside>
+    </div>
+    <noscript><p class="lab-note">Enable JavaScript to open the replay and investigate Dead Channel.</p></noscript>
+    <p id="replay-status" class="lab-status" role="status"></p>
+    <div class="desk-grid" id="desk" hidden>
+      <section class="lab-panel console" aria-labelledby="evidence-heading">
+        <div class="console-heading">
+          <h2 id="evidence-heading">Open the evidence</h2>
+          <a class="lab-note" href="replay.json" download="dead-channel-replay.json">Download replay JSON</a>
+        </div>
+        <div class="lab-controls desk-tabs" role="group" aria-label="Evidence view">
+          <button class="lab-button" type="button" data-view="feeds" aria-controls="feeds" aria-pressed="true">Feed status</button>
+          <button class="lab-button" type="button" data-view="accepted" aria-controls="accepted" aria-pressed="false">Accepted logs</button>
+          <button class="lab-button" type="button" data-view="rejected" aria-controls="rejected" aria-pressed="false">Rejected logs</button>
+        </div>
+        <section class="lab-stack" id="feeds" aria-labelledby="feeds-heading">
+          <h3 id="feeds-heading">Feed status</h3>
+          <p class="lab-note" id="feed-intro"></p>
+          <ul class="feed-list" id="feed-list"></ul>
+        </section>
+        <section class="lab-stack" id="accepted" aria-labelledby="accepted-heading" hidden>
+          <div class="console-heading">
+            <h3 id="accepted-heading">Accepted logs</h3>
+            <label class="lab-field" for="source-filter">Filter by source
+              <select id="source-filter">
+                <option value="">All sources</option>
+              </select>
+            </label>
+          </div>
+          <p class="lab-note" id="accepted-intro"></p>
+          <ul class="record-list" id="accepted-list"></ul>
+        </section>
+        <section class="lab-stack" id="rejected" aria-labelledby="rejected-heading" hidden>
+          <h3 id="rejected-heading">Rejected logs</h3>
+          <p class="lab-note">These lines never made it into the feed.</p>
+          <ul class="record-list" id="rejected-list"></ul>
+          <h3>Duplicates</h3>
+          <ul class="record-list" id="duplicate-list"></ul>
+        </section>
+      </section>
+      <section class="lab-panel diagnosis" aria-labelledby="diagnosis-heading">
+        <h2 id="diagnosis-heading">Make the call</h2>
+        <form class="lab-stack" id="diagnosis-form">
+          <fieldset class="lab-stack diagnosis-options">
+            <legend>Why does the desk look quiet?</legend>
+            <label><input type="radio" name="diagnosis" value="quiet"> The game gateway is quiet because its traffic stopped.</label>
+            <label><input type="radio" name="diagnosis" value="collector"> The whole collector stopped running.</label>
+            <label><input type="radio" name="diagnosis" value="rejected"> The collector is running, but the gateway feed is stale because incoming records are being rejected.</label>
+          </fieldset>
+          <div class="lab-controls">
+            <button class="lab-button lab-button--primary" type="submit" id="check-diagnosis" disabled>Check diagnosis</button>
+            <button class="lab-button" type="reset">Reset case</button>
+          </div>
+        </form>
+        <div class="lab-stack diagnosis-feedback" id="diagnosis-feedback" hidden>
+          <h3 id="feedback-heading" tabindex="-1"></h3>
+          <p id="feedback-copy"></p>
+        </div>
+      </section>
+    </div>
+    <p class="lab-note">This case uses fictional logs. The <a href="https://github.com/wayofkaleb/dead-channel#run-locally">Python CLI</a> generates the replay the desk reads.</p>
+  </main>
+</body>
+</html>

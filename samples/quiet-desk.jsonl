@@ -1,0 +1,12 @@
+{"id":"match-queue-18","source":"match-service","kind":"event","timestamp":"2026-01-17T23:59:44Z","received_at":"2026-01-17T23:59:45Z","message":"Two players joined the practice queue."}
+{"id":"gateway-heartbeat-52","source":"game-gateway","kind":"heartbeat","timestamp":"2026-01-17T23:59:52Z","received_at":"2026-01-17T23:59:53Z","message":"The gateway collector checked in."}
+{"id":"gateway-conn-73","source":"game-gateway","kind":"event","timestamp":"2026-01-17T23:59:71Z","received_at":"2026-01-17T23:59:57Z","message":"The practice lobby accepted a connection."}
+{"id":"auth-session-61","source":"auth-service","kind":"event","timestamp":"2026-01-17T17:59:35-06:00","received_at":"2026-01-17T23:59:37Z","message":"A test account opened a session."}
+{"id":"gateway-health-66","source":"game-gateway","kind":"event","timestamp":"2026-01-17T23:57:14Z","received_at":"2026-01-17T23:57:16Z","message":"The practice lobby passed its connection check."}
+{"id":"auth-heartbeat-48","source":"auth-service","kind":"heartbeat","timestamp":"2026-01-17T23:59:48Z","received_at":"2026-01-17T23:59:49Z","message":"The auth collector checked in."}
+{"id":"gateway-conn-69","source":"game-gateway","kind":"event","timestamp":"2026-01-17T23:57:38Z","received_at":"2026-01-17T23:59:50Z","message":"A test client connected to the practice lobby."}
+{"id":"match-heartbeat-42","source":"match-service","kind":"heartbeat","timestamp":"2026-01-17T23:59:42Z","received_at":"2026-01-17T23:59:43Z","message":"The match collector checked in."}
+{"id":"match-queue-18","source":"match-service","kind":"event","timestamp":"2026-01-17T23:59:44Z","received_at":"2026-01-17T23:59:45Z","message":"Two players joined the practice queue."}
+{"id":"gateway-conn-74","source":"game-gateway","kind":"event","timestamp":"2026-01-17T23:59:55","received_at":"2026-01-17T23:59:59Z","message":"The practice lobby accepted a connection."}
+{"id":"match-ready-19","source":"match-service","kind":"event","timestamp":"2026-01-17T23:59:51Z","received_at":"2026-01-17T23:59:52Z","message":"A practice match started."}
+{"id":"auth-refresh-62","source":"auth-service","kind":"event","timestamp":"2026-01-17T23:59:52Z","received_at":"2026-01-17T23:59:54Z","message":"A test account refreshed its session."}
